@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colearners Education and Research Institute</title>
+    <script type="module" src ="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+    <style>
+        button{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+  }
+  button[slot="hotspot-hand"]{
+    --min-hotspot-opacity: 0;
+    background-color: red;
+  }
+  button[slot="hotspot-foot"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
+  #h1{
+      justify-content: center;
+      font-size: x-large;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #888888;
+  }
+  #h2{
+      font-size: large;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: lightgrey;
+      align-self: center;
+      text-align: center;
+  }
+  #annotation{
+    background-color: #888888;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  :not(:defined) > * {
+    display: none;
+  }
+
+model-viewer{
+    width: 100%;
+    height: 85vh;
+    margin: 20 auto;
+}
+
+    </style>
+</head>
+<body>
+    <h1 id="h1">Colearners Educational and Research Institute </h1>
+    <h2 id="h2">Below is the model of a an animal Inspect it,<br/> The important parts are being highlighted with markers </h2>
+    <model-viewer id="hotspot-demo" src="assests\compressed.glb" camera-controls auto-rotate color:#ffffff00;" alt="A 3D model of an astronaut.">
+        <button slot="hotspot-head" data-position="4.63 22.52 0.66" data-normal="0.43 0.184 0.879">
+            <div id="annotation">Antenna which sense objects</div>
+        </button> 
+
+        <button slot="hotspot-eye" data-position="-3.077 14.756 5.337" data-normal="-0.624 0.302 0.719">
+          <div id="annotation"> </div>
+        </button>
+        <button slot="hotspot-tail" data-position="-0.019 2.784 -7.806" data-normal="-0.039 0.747 -.662" ><div id="annotation">The Tail</div></button>
+        
+
+    </model-viewer>
+
+</body>
+</html>
